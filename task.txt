@@ -1,0 +1,53 @@
+## Technical Specification
+
+Develop an algorithm for selecting similar hotels based on the provided preprocessed hotel dataset.
+
+The dataset includes hotel IDs, names, country, region or city, category / star rating, coordinates, and hotel features related to beach, food service, children’s facilities, pools, rooms, sports, SPA, hotel type, and additional services.
+
+The algorithm should take the `id` of one selected hotel as input and return the `top N` most similar hotels. By default, the function should return `top 3` recommendations. The original hotel must not be included in the recommendation list.
+
+The recommendation logic should follow a hierarchy of importance:
+
+1. Hotels from the same region or city should be prioritized.
+2. Hotels with the same category or star rating should be prioritized if enough similar options are available.
+3. Infrastructure and service features should be used to calculate the final similarity score.
+4. If there are not enough close matches, the algorithm should gradually relax the restrictions: first by category / star rating, then by region or city.
+
+The similarity calculation approach must be clearly described. The implementation should explain which features are used, how categorical, numerical, and binary features are processed, how missing values are handled, and which similarity metric is applied.
+
+Missing values should not automatically be treated as the absence of a service. Unknown values should be handled separately or excluded from direct comparison when necessary.
+
+The implementation should combine statistical and machine learning approaches, such as feature analysis, normalization, encoding, and similarity calculation based on vector representations of hotels.
+
+The main function should be:
+
+`recommend_hotels(hotel_id, top_n=3)`
+
+The function should return a table sorted by similarity score in descending order. The table should include:
+
+* recommended hotel ID;
+* hotel name;
+* region / city;
+* category / star rating;
+* key characteristics;
+* similarity score;
+* short explanation of the recommendation.
+
+It is also necessary to implement a second function:
+
+`compare_hotels(hotel_id_1, hotel_id_2)`
+
+This function should compare two hotels by key parameters and return a table with:
+
+* parameter name;
+* value for the first hotel;
+* value for the second hotel;
+* comparison result.
+
+The comparison result should be one of the following:
+
+* `similar`;
+* `not similar`;
+* `insufficient information`.
+
+The project should be implemented in Jupyter Notebook. The code should include comments explaining the main steps, decisions, and logic of the algorithm.
