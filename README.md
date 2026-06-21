@@ -153,3 +153,5 @@ The dataset does not contain labeled “correct” recommendations, so the syste
 ## License
 
 This project is licensed under the MIT License.
+
+The original dataset is not included in the repository due to data access restrictions.
