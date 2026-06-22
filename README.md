@@ -33,6 +33,7 @@ Some fields contain missing or incomplete information, so the project includes a
 ├── 0_preprocessing.ipynb
 ├── 1_modeling.ipynb
 ├── 2_inference.ipynb
+├── task.txt
 └── README.md
 ```
 
