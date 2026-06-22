@@ -33,10 +33,6 @@ Some fields contain missing or incomplete information, so the project includes a
 ├── 0_preprocessing.ipynb
 ├── 1_modeling.ipynb
 ├── 2_inference.ipynb
-├── hotels_preprocessed.pkl
-├── final_similarity_matrix.pkl
-├── similarity_weights.pkl
-├── requirements.txt
 └── README.md
 ```
 
